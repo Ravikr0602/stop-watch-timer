@@ -1,5 +1,5 @@
 let [milliseconds,seconds,minutes,hours] = [0,0,0,0];
-let timerRef = document.querySelector('#timer');
+let timer = document.querySelector('#timer');
 let int = null;
 
 document.getElementById('start').addEventListener('click', ()=>{
@@ -16,7 +16,7 @@ document.getElementById('pause').addEventListener('click', ()=>{
 document.getElementById('reset').addEventListener('click', ()=>{
     clearInterval(int);
     [milliseconds,seconds,minutes,hours] = [0,0,0,0];
-    timerRef.innerHTML = '00 : 00 : 00 : 000 ';
+    timer.innerHTML = '00 : 00 : 00 : 000 ';
 });
 
 function Timer(){
@@ -38,5 +38,5 @@ function Timer(){
     let s = seconds < 10 ? "0" + seconds : seconds;
     let ms = milliseconds < 10 ? "00" + milliseconds : milliseconds < 100 ? "0" + milliseconds : milliseconds;
 
-    timerRef.innerHTML = ` ${h} : ${m} : ${s} : ${ms}`;
+    timer.innerHTML = ` ${h} : ${m} : ${s} : ${ms}`;
 }
